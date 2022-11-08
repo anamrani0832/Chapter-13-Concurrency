@@ -7,3 +7,8 @@ function doFlexibleStuff(executeStuff){
 const function1 = () => console.log("HELLO FROM function");
 
 doFlexibleStuff(function1);
+function doSomething(callback){
+    callback();
+}
+const sayHi = () => "hi from callback fucntion";
+doSomething(sayHi);
