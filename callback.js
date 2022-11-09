@@ -2,13 +2,59 @@
 // function doFlexibleStuff(executeStuff){
 //     executeStuff();
 //     console.log("hello callback!");
-    
+
 // }
 // const function1 = () => console.log("HELLO FROM function");
 
 // doFlexibleStuff(function1);
-function doSomething(callback){
-    callback();
+// Example #01
+// function doSomething(callback) {
+//   callback();
+// }
+// const sayHi = () => console.log("hi from callback fucntion");
+// doSomething(sayHi);
+
+//  Example # 02
+
+function judge(grade) {
+  switch (grade) {
+    case "A":
+      console.log(`you got an ${grade} :  amazing!`);
+      break;
+    case "B":
+      console.log(`you got a ${grade} : well done!`);
+      break;
+    case "C":
+      console.log(`you got a ${grade} : alright!`);
+      break;
+    case "D":
+      console.log(`you got a ${grade} : hmmm....`);
+      break;
+    default:
+      console.log("A", grade, "! What?!");
+      break;
+  }
 }
-const sayHi = () => console.log("hi from callback fucntion");
-doSomething(sayHi);
+
+function getGrade(score, callback) {
+  let grade;
+  switch (true) {
+    case score >= 90:
+      grade = "A";
+      break;
+    case score >= 80:
+      grade = "B";
+      break;
+    case score >= 70:
+      grade = "C";
+      break;
+    case score >= 60:
+      grade = "D";
+      break;
+    default:
+      grade = "F";
+      break;
+  }
+  callback(grade);
+}
+getGrade(85, judge);
