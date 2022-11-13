@@ -62,13 +62,25 @@
 
 // // Practice exercise 13.1
 
-function greet(fullName) {
-  fullName.forEach(e => console.log(`hello doing welcome ${e}`));
-}
+// function greet(fullName) {
+//   fullName.forEach(e => console.log(`hello doing welcome ${e}`));
+// }
 
-function getGreeting(str, callback) {
- const strArray = str.split("");
- callback(strArray);
-}
-getGreeting("Anam" , greet);
+// function getGreeting(str, callback) {
+//  const strArray = str.split("");
+//  callback(strArray);
+// }
+// getGreeting("Anam" , greet);
 
+
+// real life callback functions
+
+const loginUser = (email, pass) => {
+  setTimeout(() => {
+    return {
+      userEmail : email
+    }
+  }, 2000);
+}
+const loggedInUser = loginUser("anam@gmail.com", 1234);
+console.log(loggedInUser);
